@@ -57,3 +57,72 @@ A comprehensive network security project implementing a secure multi-department 
 ## 🧪 **Testing & Verification**
 
 ### Network Connectivity Tests
+
+Inter-VLAN Communication (Should Work)
+ping 192.168.20.10  # Admin to Sales ping 192.168.30.10  # Admin to IT
+Blocked Communication (Should Fail)
+ping 192.168.40.10  # Admin to Finance (Blocked by ACL)
+
+
+### Verification Commands
+
+VLAN Configuration
+show vlan brief
+IP Interface Status
+show ip interface brief
+Access Control Lists
+show access-lists
+Routing Table
+show ip route
+
+
+## 📈 **Network Architecture**
+
+### VLAN Design
+| VLAN ID | Department | Network | Gateway |
+|---------|------------|---------|---------|
+| 10 | Administration | 192.168.10.0/24 | 192.168.10.1 |
+| 20 | Sales | 192.168.20.0/24 | 192.168.20.1 |
+| 30 | IT | 192.168.30.0/24 | 192.168.30.1 |
+| 40 | Finance | 192.168.40.0/24 | 192.168.40.1 |
+
+### Security Policies
+- **Finance Department**: Restricted access to other departments
+- **Admin Department**: Cannot access Finance resources
+- **IT Department**: Full network access for management
+- **Sales Department**: Standard inter-department communication
+
+## 🔍 **Project Highlights**
+
+This project demonstrates:
+- **Enterprise Network Design** principles
+- **Network Security** implementation
+- **VLAN Segmentation** best practices  
+- **Access Control** policy enforcement
+- **Scalable Architecture** for growing organizations
+
+## 📝 **Documentation**
+
+- [Configuration Commands](docs/Configuration_Commands.md) - Complete CLI command reference
+- [Network Diagram](docs/Network_Topology_Diagram.png) - Visual network layout
+- [Testing Results](docs/Testing_Results.png) - Verification screenshots
+
+## 👨‍💻 **About**
+
+**Project Type**: Network Security Architecture  
+**Technology**: Cisco Packet Tracer  
+**Complexity**: Intermediate to Advanced  
+**Focus**: Enterprise Network Security & VLAN Implementation
+
+## 🤝 **Contributing**
+
+Feel free to fork this repository and submit pull requests for improvements or additional features.
+
+## 📄 **License**
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+**⭐ If you found this project helpful, please give it a star!**
+
